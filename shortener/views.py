@@ -1,15 +1,15 @@
 from django.shortcuts import render
 
 def home(request):
-    pass
+    return render(request, 'test.html')
 
 
 def createShortURL(request):
-    pass
+    return render(request, 'test.html')
 
 
 def redirect(request):
-    pass
+    return render(request, 'test.html')
 
 
 # Create your views here.
