@@ -33,6 +33,8 @@ def create_short_url(request):
 
 
 def redirect(request, url=0):
-    return render(request, 'base.html')
-
-# Create your views here.
+    current_obj = ShortUrl.objects.filter(short_url=url)
+    if len(current_obj) == 0:
+        return render(request, 'pagenotfound.html')
+    context = {'obj': current_obj[0]}
+    return render(request, 'redirect.html', context)
